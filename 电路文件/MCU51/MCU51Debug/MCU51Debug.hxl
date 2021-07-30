@@ -1,0 +1,21 @@
+### HEXMate logfile and output summary ###
+### Memory Usage ###
+ Unused memory ranges:
+  62h - 7Fh
+  
+ D:\Git\啊硬件\电路文件\MCU51\MCU51Debug\MCU51Debug.hex ranges:
+  0h - 61h
+  
+### Hex Memory Map ###
+ Legend:
+  - = Unused memory
+  F = Filled ROM
+  S = Stored serial code
+  A = Stored ASCII string
+  R = Reserved for checksum
+  C = Stored checksum result
+  T = Trailing code
+  & = Find & replace opcode
+  1 = D:\Git\啊硬件\电路文件\MCU51\MCU51Debug\MCU51Debug.hex
+00000000: 1111111111111111111111111111111111111111111111111111111111111111
+00000040: 1111111111111111111111111111111111------------------------------
