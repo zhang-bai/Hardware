@@ -179,7 +179,9 @@ T0由特殊功能寄存器TH0和TL0构成，而T1则是由TH1和TL1构成;
 
 2.proteus 仿真
 
-
+>总线：
+>
+>
 
 
 
@@ -284,6 +286,12 @@ https://lceda.cn/page/download?src=index
 ### Date 07-28
 
 C51中断仿真练手
+
+
+
+### Date 07-30
+
+借单片机书，学习Proteus 流水灯仿真
 
 
 
