@@ -1,0 +1,417 @@
+C51 COMPILER V9.54   LSD                                                                   11/15/2020 12:40:10 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE LSD
+OBJECT MODULE PLACED IN .\Objects\lsd.obj
+COMPILER INVOKED BY: D:\ruanjian\keil5\C51\BIN\C51.EXE lsd.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listing
+                    -s\lsd.lst) TABS(2) OBJECT(.\Objects\lsd.obj)
+
+line level    source
+
+   1          #include<reg52.h>////定义头文件
+   2          void delay(unsigned int i)
+   3          {
+   4   1        while(i--);
+   5   1      }//延时//
+   6          unsigned char i,q;//定义变量//
+   7          unsigned char led1[]={0x7f,0x3f,0x1f,0x0f,0x07,0x03,0x01,0x00};
+   8          unsigned char led2[]={0xfe,0xfc,0xf8,0xf0,0xe0,0xc0,0x80,0x00};
+   9          unsigned char led3[]={0x80,0xc0,0xe0,0xf0,0xf8,0xfc,0xfe,0xff};
+  10          unsigned char led4[]={0x01,0x03,0x07,0x0f,0x1f,0x3f,0x7f,0xff};
+  11          unsigned char led5[]={0x7f,0xbf,0xdf,0xef,0xf7,0xfb,0xfd,0xfe};
+  12          unsigned char led6[]={0x55,0x55,0x55,0x55,0x55,0x55,0x55,0x55};
+  13          unsigned char led7[]={0xaa,0xaa,0xaa,0xaa,0xaa,0xaa,0xaa,0xaa};
+  14          unsigned char led8[]={0x3f,0x9f,0xcf,0xef,0xf3,0xf9,0xfc,0xfe};
+  15          unsigned char led9[]={0x1f,0x8f,0x37,0xe3,0xf1,0xf8,0xf3,0xfe};
+  16          //********挨个亮****************
+  17            void disp1()  
+  18             {        
+  19   1        //**********
+  20   1        for (q=0;q<8;q++) 
+  21   1        {
+  22   2        P3=led5[q];delay(8000);
+  23   2        P3=0xff;  
+  24   2        }
+  25   1          for (q=0;q<8;q++)
+  26   1        {
+  27   2          P1=led5[q];delay(8000);
+  28   2        P1=0xff;  
+  29   2        } 
+  30   1          for (q=0;q<8;q++)
+  31   1        {
+  32   2          P0=led5[q];delay(8000);
+  33   2        P0=0xff;  
+  34   2        } 
+  35   1          for (q=0;q<8;q++)
+  36   1        {
+  37   2          P2=led5[q];delay(8000);
+  38   2        P2=0xff;  
+  39   2        } 
+  40   1        //**************88
+  41   1        for (q=0;q<8;q++) 
+  42   1        {
+  43   2        P3=led5[q];delay(6000);
+  44   2        P3=0xff;  
+  45   2        }
+  46   1          for (q=0;q<8;q++)
+  47   1        {
+  48   2          P1=led5[q];delay(6000);
+  49   2        P1=0xff;  
+  50   2        } 
+  51   1          for (q=0;q<8;q++)
+  52   1        {
+  53   2          P0=led5[q];delay(6000);
+  54   2        P0=0xff;  
+C51 COMPILER V9.54   LSD                                                                   11/15/2020 12:40:10 PAGE 2   
+
+  55   2        } 
+  56   1          for (q=0;q<8;q++)
+  57   1        {
+  58   2          P2=led5[q];delay(6000);
+  59   2        P2=0xff;  
+  60   2        }
+  61   1      for (q=0;q<8;q++) 
+  62   1        {
+  63   2        P3=led5[q];delay(4000);
+  64   2        P3=0xff;  
+  65   2        }
+  66   1          for (q=0;q<8;q++)
+  67   1        {
+  68   2          P1=led5[q];delay(4000);
+  69   2        P1=0xff;  
+  70   2        } 
+  71   1          for (q=0;q<8;q++)
+  72   1        {
+  73   2          P0=led5[q];delay(4000);
+  74   2        P0=0xff;  
+  75   2        } 
+  76   1          for (q=0;q<8;q++)
+  77   1        {
+  78   2          P2=led5[q];delay(4000);
+  79   2        P2=0xff;  
+  80   2        } 
+  81   1        for(i=0;i<3;i++)  
+  82   1        {
+  83   2      for (q=0;q<8;q++) 
+  84   2        {
+  85   3        P3=led5[q];delay(2000);
+  86   3        P3=0xff;  
+  87   3        }
+  88   2          for (q=0;q<8;q++)
+  89   2        {
+  90   3          P1=led5[q];delay(2000);
+  91   3        P1=0xff;  
+  92   3        } 
+  93   2          for (q=0;q<8;q++)
+  94   2        {
+  95   3          P0=led5[q];delay(2000);
+  96   3        P0=0xff;  
+  97   3        } 
+  98   2          for (q=0;q<8;q++)
+  99   2        {
+ 100   3          P2=led5[q];delay(2000);
+ 101   3        P2=0xff;  
+ 102   3        }   
+ 103   2          }
+ 104   1            }
+ 105          //************over*****************
+ 106          //*********** 全部依此点亮***************** 
+ 107            void disp2()  
+ 108            {{{{
+ 109   4          for (i=0;i<2;i++)
+ 110   4      {   
+ 111   5          for (q=0;q<8;q++) 
+ 112   5        {
+ 113   6        P3=led1[q];delay(2000);
+ 114   6        }
+ 115   5          for (q=0;q<8;q++)
+ 116   5        {
+C51 COMPILER V9.54   LSD                                                                   11/15/2020 12:40:10 PAGE 3   
+
+ 117   6          P1=led1[q];delay(2000);   
+ 118   6        } 
+ 119   5          for (q=0;q<8;q++)
+ 120   5        {
+ 121   6          P0=led1[q];delay(2000);   
+ 122   6        } 
+ 123   5          for (q=0;q<8;q++)
+ 124   5        {
+ 125   6          P2=led1[q];delay(2000);   
+ 126   6        } 
+ 127   5         P3=P1=P0=P2=0xff; }}
+ 128   3          for (q=0;q<8;q++) 
+ 129   3        {
+ 130   4        P3=led1[q];delay(4000); 
+ 131   4        }
+ 132   3          for (q=0;q<8;q++)
+ 133   3        {
+ 134   4          P1=led1[q];delay(4000); 
+ 135   4        } 
+ 136   3          for (q=0;q<8;q++)
+ 137   3        {
+ 138   4          P0=led1[q];delay(4000); 
+ 139   4        } 
+ 140   3          for (q=0;q<8;q++)
+ 141   3        {
+ 142   4          P2=led1[q];delay(4000); 
+ 143   4        } 
+ 144   3         P3=P1=P0=P2=0xff; }
+ 145   2          for (q=0;q<8;q++) 
+ 146   2        {
+ 147   3        P3=led1[q];delay(6000); 
+ 148   3        }
+ 149   2          for (q=0;q<8;q++)
+ 150   2        {
+ 151   3          P1=led1[q];delay(6000);   
+ 152   3        } 
+ 153   2          for (q=0;q<8;q++)
+ 154   2        {
+ 155   3          P0=led1[q];delay(6000);   
+ 156   3        } 
+ 157   2          for (q=0;q<8;q++)
+ 158   2        {
+ 159   3          P2=led1[q];delay(6000);}  
+ 160   2         P3=P1=P0=P2=0xff; }
+ 161   1          for (q=0;q<8;q++) 
+ 162   1        {
+ 163   2        P3=led1[q];delay(8000);
+ 164   2        }
+ 165   1          for (q=0;q<8;q++)
+ 166   1        {
+ 167   2          P1=led1[q];delay(8000); 
+ 168   2        } 
+ 169   1          for (q=0;q<8;q++)
+ 170   1        {
+ 171   2          P0=led1[q];delay(8000); 
+ 172   2        } 
+ 173   1          for (q=0;q<8;q++)
+ 174   1        {
+ 175   2          P2=led1[q];delay(8000);   
+ 176   2        }
+ 177   1      delay(120000);
+ 178   1        for (q=0;q<8;q++)
+C51 COMPILER V9.54   LSD                                                                   11/15/2020 12:40:10 PAGE 4   
+
+ 179   1        {
+ 180   2          P3=led3[q];
+ 181   2          P2=led4[q];
+ 182   2          delay(12000);}
+ 183   1        for (q=0;q<8;q++)
+ 184   1          {
+ 185   2          P1=led3[q];
+ 186   2          P0=led4 [q];
+ 187   2          delay(12000);}
+ 188   1         P3=P1=P0=P2=0xff; }    
+ 189          //********over***************
+ 190          //************************   
+ 191           void disp3()
+ 192           {
+ 193   1         for(i=0;i<4;i++)
+ 194   1         {
+ 195   2      P3=P1=P0=P2=0x00;delay(40000);
+ 196   2      P3=P1=P0=P2=0xff;delay(40000);  
+ 197   2         }}
+ 198          //************over************
+ 199           void disp4()  
+ 200           {
+ 201   1        for (q=0;q<8;q++)  
+ 202   1       {
+ 203   2         P2=led2[q];
+ 204   2         delay(6000);}
+ 205   1       for (q=0;q<8;q++)
+ 206   1         {
+ 207   2         P0=led2[q];
+ 208   2         delay(6000);}
+ 209   1         delay(120000);
+ 210   1         for (q=0;q<8;q++)  
+ 211   1         {
+ 212   2         P3=led1[q];delay(6000);}
+ 213   1           for (q=0;q<8;q++){
+ 214   2         P1=led1[q];delay(6000);}
+ 215   1           P0=P1=P2=P3=0xff;
+ 216   1       }
+ 217           /////
+ 218           void disp5() 
+ 219           {
+ 220   1         for(i=0;i<10;i++)
+ 221   1       {
+ 222   2         P3=P1=P0=P2=led6[q];
+ 223   2         delay(12000);
+ 224   2         P3=P1=P0=P2=~led6[q];
+ 225   2         delay(12000);
+ 226   2       }
+ 227   1        P3=P1=P0=P2=0xff;
+ 228   1       }
+ 229          //*******************************
+ 230            void disp6()
+ 231          {
+ 232   1      for(i=0;i<4;i++)
+ 233   1      {
+ 234   2        for(q=0;q<8;q++)
+ 235   2        {
+ 236   3        P3=P1=P0=P2=led1[q];delay(6000);
+ 237   3        }
+ 238   2        for(q=0;q<8;q++)
+ 239   2          {
+ 240   3        P3=P1=P0=P2=led3[q];delay(6000);} 
+C51 COMPILER V9.54   LSD                                                                   11/15/2020 12:40:10 PAGE 5   
+
+ 241   2        P3=P1=P0=P2=0xff;
+ 242   2        }}
+ 243          //////***********************
+ 244           void disp7()
+ 245          { 
+ 246   1        for(q=0;q<8;q++)
+ 247   1        {
+ 248   2          P3=led1[q];
+ 249   2          P2=led2[q];
+ 250   2        delay(12000);
+ 251   2        }
+ 252   1        for(q=0;q<8;q++)
+ 253   1         {
+ 254   2          P1=led1[q];
+ 255   2          P0=led2[q];
+ 256   2          delay(12000);
+ 257   2         }  
+ 258   1       }
+ 259          //************************
+ 260           void disp8()
+ 261           {
+ 262   1         for (i=0;i<5;i++  )
+ 263   1       { 
+ 264   2       P3=P1=P0=P2=0x00;
+ 265   2       {
+ 266   3       P1=P2=0xff;
+ 267   3         P3=P0=0xff;delay(12000);
+ 268   3        P3=P0=0x00;delay(12000);
+ 269   3         
+ 270   3           P1=P2=0xff;delay(12000);
+ 271   3        P1=P2=0x00;delay(12000);
+ 272   3         P3=P1=P0=P2=0xff;
+ 273   3       }}}
+ 274           //***************************
+ 275           ////////////
+ 276          void disp9()      
+ 277            {         
+ 278   1          for (q=0;q<8;q++) 
+ 279   1        {
+ 280   2        P2=led2[q];delay(6000);
+ 281   2        }
+ 282   1          for (q=0;q<8;q++)
+ 283   1        {
+ 284   2          P0=led2[q];delay(6000); 
+ 285   2        } 
+ 286   1          for (q=0;q<8;q++)
+ 287   1        {
+ 288   2          P1=led2[q];delay(6000); 
+ 289   2        } 
+ 290   1          for (q=0;q<8;q++)
+ 291   1        {
+ 292   2          P3=led2[q];delay(6000 );
+ 293   2        } 
+ 294   1        P3=P2=P1=P0=0x00;
+ 295   1        for(q=0;q<8;q++)
+ 296   1         {
+ 297   2          P3=led3[q];
+ 298   2          P2=led4[q];
+ 299   2          delay(12000);
+ 300   2         }
+ 301   1              for(q=0;q<8;q++) 
+ 302   1      {   
+C51 COMPILER V9.54   LSD                                                                   11/15/2020 12:40:10 PAGE 6   
+
+ 303   2          P1=led3[q];
+ 304   2          P0=led4[q];
+ 305   2          delay(12000);}
+ 306   1        } 
+ 307          //*******over****************
+ 308          //************************   
+ 309           void disp10 () 
+ 310          {
+ 311   1        for(q=0;q<8;q++)
+ 312   1        {
+ 313   2          P1=led2[q];
+ 314   2          P0=led1[q];
+ 315   2        delay(7000);
+ 316   2        }
+ 317   1        for(q=0;q<8;q++)
+ 318   1         {
+ 319   2          P3=led2[q];
+ 320   2          P2=led1[q];
+ 321   2          delay(7000);
+ 322   2         }   
+ 323   1          for(q=0;q<8;q++) 
+ 324   1      {   
+ 325   2          P1=led4[q];
+ 326   2          P0=led3[q];
+ 327   2          delay(7000);
+ 328   2      }
+ 329   1            for(q=0;q<8;q++) 
+ 330   1      {   
+ 331   2          P3=led4[q];
+ 332   2          P2=led3[q];
+ 333   2          delay(7000);
+ 334   2      }
+ 335   1      }
+ 336          
+ 337           void disp11() 
+ 338           { 
+ 339   1         for(i=0;i<3;i++)
+ 340   1         {
+ 341   2       P3=P2=0x00;delay(10000);
+ 342   2       P3=P2=0xff;delay(10000);
+ 343   2       P0=P1=0x00;delay(10000);
+ 344   2       P0=P1=0xff;delay(10000);
+ 345   2         
+ 346   2      
+ 347   2         }}
+ 348          //
+ 349          //*************over***********
+ 350          //***************************
+ 351          void main()
+ 352          {
+ 353   1        while(1)  
+ 354   1        {  
+ 355   2          disp1();//一个一个流
+ 356   2          disp2();//全部流加速
+ 357   2          disp3();//全闪
+ 358   2          disp4();//爱心合成
+ 359   2          disp5();//间隔闪烁
+ 360   2          disp6();//分四个流
+ 361   2          disp7();
+ 362   2          disp8();//分四段闪烁
+ 363   2          disp11();//上下闪
+ 364   2          disp9();//合成加消失
+C51 COMPILER V9.54   LSD                                                                   11/15/2020 12:40:10 PAGE 7   
+
+ 365   2          disp10(); //合成加消失
+ 366   2          disp5();
+ 367   2          disp6();
+ 368   2          disp3();
+ 369   2          disp2();
+ 370   2        
+ 371   2          
+ 372   2        }
+ 373   1      }
+ 374          
+ 375            
+ 376            
+ 377            
+ 378          
+ 379          
+ 380          
+ 381          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1922    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     74    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\lsd.obj" 
+TO ".\Objects\LSD" 
+PRINT(".\Listings\LSD.m51") RAMSIZE(256) 

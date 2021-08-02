@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\diy.obj" 
+TO ".\Objects\hxd" 
+PRINT(".\Listings\hxd.m51") RAMSIZE(256) 

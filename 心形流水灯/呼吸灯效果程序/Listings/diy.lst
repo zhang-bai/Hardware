@@ -1,0 +1,59 @@
+C51 COMPILER V9.54   DIY                                                                   12/08/2019 12:58:49 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE DIY
+OBJECT MODULE PLACED IN .\Objects\diy.obj
+COMPILER INVOKED BY: D:\ruanjian\keil5\C51\BIN\C51.EXE diy.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listing
+                    -s\diy.lst) TABS(2) OBJECT(.\Objects\diy.obj)
+
+line level    source
+
+   1          /****************************************
+   2          心形流水灯呼吸程序
+   3          此程序来自网络，后修改
+   4          **********************************************/
+   5          #include<reg52.h> 
+   6          
+   7          int PWM_Low,Clock=400;//改变数值大小调节呼吸快慢
+   8          
+   9          void delay (unsigned int i)
+  10          {
+  11   1      while(i--);
+  12   1      }
+  13          
+  14          
+  15          void main(void)
+  16          {
+  17   1          while(1)
+  18   1                {
+  19   2                  for(PWM_Low=Clock;PWM_Low>0;PWM_Low--) 
+  20   2                   {
+  21   3                        P0=P1=P2=P3=0XFF;
+  22   3                         delay(PWM_Low);
+  23   3                        P0=P1=P2=P3=0X00;
+  24   3                         delay(Clock-PWM_Low);
+  25   3                       }
+  26   2                   
+  27   2                  for(PWM_Low=0;PWM_Low<Clock;PWM_Low++)  
+  28   2                       
+  29   2                               {      P0=P1=P2=P3=0XFF;
+  30   3                                      delay(PWM_Low);
+  31   3                                     P0=P1=P2=P3=0X00;
+  32   3                                      delay(Clock-PWM_Low);
+  33   3                               }
+  34   2                 }           
+  35   1         }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    139    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
